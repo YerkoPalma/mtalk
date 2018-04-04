@@ -13,6 +13,10 @@
   "dependencies": {
     "choo": "^6.10.3",
     "choo-service-worker": "^2.4.0",
+    "highlight-syntax": "^3.0.2",
+    "highlight-syntax-pastel": "^1.0.0",
+    "markdown-it": "^8.4.1",
+    "markdown-it-meta": "0.0.1",
     "sheetify": "^7.3.0",
     "tachyons": "^4.9.1"
   },

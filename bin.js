@@ -1,7 +1,7 @@
 var minimist = require('minimist')
 var { readdir, statSync, copyFileSync } = require('fs')
 var assert = require('assert')
-var { resolve } = require('path')
+var { resolve, dirname } = require('path')
 var { spawn } = require('child_process')
 var argv = minimist(process.argv.slice(2))
 
@@ -11,14 +11,19 @@ var argv = minimist(process.argv.slice(2))
   // copy entry files into this template
   readdir(entry, (err, files) => {
     assert.ifError(err)
-    for(var file in files) {
+    for(var file of files) {
       copyFileSync(resolve(process.cwd(), argv._[0], file), resolve(__dirname, 'assets', 'slides', file))
     }
   })
   // build and generate
-  var bankai = spawn('bankai', ['build', resolve(__dirname, 'index.js')])
+  var bankai = spawn(resolve('node_modules', '.bin', 'bankai'), ['build', resolve(__dirname, 'index.js'), resolve(dirname(entry), 'dist')])
   bankai.on('exit', (code, signal) => {
-    // run dat
-    var dat = spawn('dat', [resolve(__dirname, 'index.js')])
+    console.log('finished bankai')
+  })
+  bankai.stdout.on('data', data => {
+    console.log(`stdout: ${data}`)
+  })
+  bankai.stderr.on('data', data => {
+    console.log(`stderr: ${data}`)
   })
 })(argv)

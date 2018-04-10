@@ -9,6 +9,8 @@ $ make-talk talks-folder
 
 And that's all.
 
+**Note**: For this to work you need Node v8.5+
+
 ### Slide structure
 Slides are markdown files with metadata
 
@@ -24,8 +26,8 @@ Some content
 Each slide could have the following metadata
 
 - **title**: The title for the slide document.
-- **next**: The name of the next slide file. Use a dot(.) for the last slide.
-- **prev**: The name of the previous slide file. Use a dot(.) for the first slide.
+- **next**: The name of the next slide file. Use a dot (.) for the last slide.
+- **prev**: The name of the previous slide file. Use a dot (.) for the first slide.
 - **speech**: An object with some options to enable speech for this slide. If 
 this is not set, your slide wont have any speech. Availaible options are:
   - lang: The language of the speech.

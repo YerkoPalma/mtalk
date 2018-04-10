@@ -1,6 +1,7 @@
 var minimist = require('minimist')
 var { readdir, statSync, copyFileSync } = require('fs')
 var assert = require('assert')
+var rimraf = require('rimraf')
 var { resolve, dirname } = require('path')
 var { spawn } = require('child_process')
 var argv = minimist(process.argv.slice(2))
@@ -18,7 +19,8 @@ var argv = minimist(process.argv.slice(2))
   // build and generate
   var bankai = spawn(resolve('node_modules', '.bin', 'bankai'), ['build', resolve(__dirname, 'index.js'), resolve(dirname(entry), 'dist')])
   bankai.on('exit', (code, signal) => {
-    console.log('finished bankai')
+    console.log('finished bankai, removing files')
+    rimraf(resolve(__dirname, 'assets', 'slides/*'), () => console.log('removed slides from source'))
   })
   bankai.stdout.on('data', data => {
     console.log(`stdout: ${data}`)

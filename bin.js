@@ -21,7 +21,6 @@ var argv = minimist(process.argv.slice(2))
   // build and generate
   var bankai = spawn(resolve('node_modules', '.bin', 'bankai'), ['build', resolve(__dirname, 'index.js'), dist])
   bankai.on('exit', (code, signal) => {
-    console.log('finished bankai, removing files')
     rimraf(resolve(__dirname, 'assets', 'slides/*'), () => {
       // share on dat
       Dat(dist, (err, dat) => {

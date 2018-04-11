@@ -14,6 +14,7 @@
     "bankai": "^9.10.4",
     "choo": "^6.10.3",
     "choo-service-worker": "^2.4.0",
+    "choo-tts": "^1.0.0",
     "dat-node": "^3.5.8",
     "highlight-syntax": "^3.0.2",
     "highlight-syntax-pastel": "^1.0.0",

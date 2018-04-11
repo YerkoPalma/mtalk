@@ -12,6 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 app.use(require('./stores/slides'))
+app.use(require('./stores/mobile'))
 
 app.route('/', require('./views/main'))
 app.route('/*', require('./views/404'))

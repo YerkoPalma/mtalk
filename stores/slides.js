@@ -6,6 +6,7 @@ module.exports = store
 var events = store.events = {
   NEXT: 'slides:next',
   PREV: 'slides:prev',
+  SPEAK: 'slides:speak',
   LOAD: 'slides:load'
 }
 function store (state, emitter) {
@@ -22,8 +23,15 @@ function store (state, emitter) {
         emitter.emit(events.NEXT)
       } else if (event.key === 'ArrowLeft') {
         emitter.emit(events.PREV)
+      } else if (event.key === 'F1') {
+        emitter.emit(events.SPEAK)
       }
     })
+    // also add support for mobile handlers
+    // use once because we are binding events here
+    emitter.once('tap', () => emitter.emit(events.NEXT))
+    emitter.once('doubletap', () => emitter.emit(events.PREV))
+    emitter.once('hold', () => emitter.emit(events.SPEAK))
   })
   emitter.on(events.NEXT, function () {
     if (state.slides.next !== '.') {
@@ -37,6 +45,10 @@ function store (state, emitter) {
       emitter.emit(events.LOAD, state.slides.prev)
     }
   })
+  emitter.on(events.SPEAK, function () {
+    var text = state.slides.speech
+    emitter.emit('tts:speak', text)
+  })
   emitter.on(events.LOAD, function (slide) {
     fetch('../assets/slides/' + slide)
       .then(response => response.text())
@@ -46,6 +58,7 @@ function store (state, emitter) {
         state.slides.title = renderer.meta.title
         state.slides.next = renderer.meta.next
         state.slides.prev = renderer.meta.prev
+        state.slides.speech = renderer.meta.speech
         emitter.emit('render')
       })
   })

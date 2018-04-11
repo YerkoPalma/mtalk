@@ -41,10 +41,9 @@ this is not set, your slide wont have any speech. Availaible options are:
 - Slides are responsive, also controls
 
 ## Controls
-- <kbd>→</kbd>: Use ArrowRight key to move forward.
-- <kbd> _ </kbd>: Use Space key to move forward.
-- <kbd>←</kbd>: Use ArrowLeft key to move backward.
-- <kbd>f1</kbd>: Use f1 key to _read_ current slide.
-- <kbd>f2</kbd>: Use f1 key to _read_ all the slides (autoplay).
+- <kbd>→</kbd> or _Tap_: Use ArrowRight key to move forward.
+- <kbd>_</kbd> or _Tap_: Use Space key to move forward.
+- <kbd>←</kbd> or _Double tap_: Use ArrowLeft key to move backward.
+- <kbd>f1</kbd> or _Tap and hold_: Use f1 key to _read_ current slide.
 - <kbd>Ctrl</kbd> + <kbd>p</kbd>: Export slides to pdf (Windows and Linux only).
 

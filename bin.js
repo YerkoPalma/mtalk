@@ -1,3 +1,7 @@
+#! /usr/bin/env node
+
+process.title = 'mtalk'
+
 var minimist = require('minimist')
 var { readdir, statSync, copyFileSync } = require('fs')
 var assert = require('assert')

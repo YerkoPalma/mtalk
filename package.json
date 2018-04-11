@@ -1,7 +1,19 @@
 {
-  "name": "choo-talk",
+  "name": "mtalk",
   "version": "1.0.0",
-  "private": true,
+  "files": [
+    "index.js",
+    "sw.js",
+    "bin.js",
+    "manifest.json",
+    "assets",
+    "lib",
+    "stores",
+    "views"
+  ],
+  "bin": {
+    "mtalk": "bin.js"
+  },
   "scripts": {
     "build": "bankai build index.js",
     "create": "choo-scaffold",

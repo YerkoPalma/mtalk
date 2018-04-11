@@ -1,10 +1,10 @@
-# make-talk
+# mtalk
 
 > Presentations made easy
 
 ## Usage
 ```bash
-$ make-talk talks-folder
+$ mtalk talks-folder
 ```
 
 And that's all.

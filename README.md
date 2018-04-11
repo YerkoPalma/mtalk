@@ -47,3 +47,5 @@ this is not set, your slide wont have any speech. Availaible options are:
 - <kbd>f1</kbd> or _Tap and hold_: Use f1 key to _read_ current slide.
 - <kbd>Ctrl</kbd> + <kbd>p</kbd>: Export slides to pdf (Windows and Linux only).
 
+## License
+MIT

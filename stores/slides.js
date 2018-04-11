@@ -46,8 +46,10 @@ function store (state, emitter) {
     }
   })
   emitter.on(events.SPEAK, function () {
-    var text = state.slides.speech
-    emitter.emit('tts:speak', text)
+    var { audio, lang } = state.slides.speech
+    var voice = state.stt.voices.filter(voice => voice.lang === lang)[0]
+    if (voice) state.tts.selectedVoice = voice
+    emitter.emit('tts:speak', audio)
   })
   emitter.on(events.LOAD, function (slide) {
     fetch('../assets/slides/' + slide)

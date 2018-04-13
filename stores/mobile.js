@@ -6,13 +6,13 @@ function mobile (state, emitter) {
 
   var manager = new Hammer.Manager(body)
   // Tap recognizer with minimal 2 taps
-  manager.add( new Hammer.Tap({ event: 'doubletap', taps: 2 }) )
+  manager.add(new Hammer.Tap({ event: 'doubletap', taps: 2 }))
   // Single tap recognizer
-  manager.add( new Hammer.Tap({ event: 'singletap' }) )
+  manager.add(new Hammer.Tap({ event: 'singletap' }))
   // Hold recognizer
-  manager.add( new Hammer.Press({ time: 500 }) )
+  manager.add(new Hammer.Press({ time: 500 }))
 
-  // we want to recognize this simulatenous, so a quadrupletap will be detected 
+  // we want to recognize this simulatenous, so a quadrupletap will be detected
   // even while a tap has been recognized.
   manager.get('doubletap').recognizeWith('singletap')
   manager.get('press').recognizeWith('singletap')

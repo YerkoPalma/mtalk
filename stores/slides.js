@@ -29,9 +29,9 @@ function store (state, emitter) {
     })
     // also add support for mobile handlers
     // use once because we are binding events here
-    emitter.once('tap', () => emitter.emit(events.NEXT))
-    emitter.once('doubletap', () => emitter.emit(events.PREV))
-    emitter.once('hold', () => emitter.emit(events.SPEAK))
+    emitter.on('tap', () => emitter.emit(events.NEXT))
+    emitter.on('doubletap', () => emitter.emit(events.PREV))
+    emitter.on('hold', () => emitter.emit(events.SPEAK))
   })
   emitter.on(events.NEXT, function () {
     if (state.slides.next !== '.') {
@@ -47,7 +47,7 @@ function store (state, emitter) {
   })
   emitter.on(events.SPEAK, function () {
     var { audio, lang } = state.slides.speech
-    var voice = state.stt.voices.filter(voice => voice.lang === lang)[0]
+    var voice = state.tts.voices.filter(voice => voice.lang === lang)[0]
     if (voice) state.tts.selectedVoice = voice
     emitter.emit('tts:speak', audio)
   })

@@ -13,12 +13,12 @@ var argv = minimist(process.argv.slice(2))
 
 ;(function (argv) {
   var entry = resolve(process.cwd(), argv._[0])
-  var dist =resolve(dirname(entry), 'dist')
+  var dist = resolve(dirname(entry), 'dist')
   assert.ok(statSync(entry).isDirectory(), '[make-talk]: Entry path must be a directory')
   // copy entry files into this template
   readdir(entry, (err, files) => {
     assert.ifError(err)
-    for(var file of files) {
+    for (var file of files) {
       copyFileSync(resolve(process.cwd(), argv._[0], file), resolve(__dirname, 'assets', 'slides', file))
     }
   })

@@ -34,18 +34,19 @@ this is not set, your slide wont have any speech. Availaible options are:
   - audio: What to speech. If not set, it will read everything on this slide.
 
 ## Features
-- No programming skills needed, just markdown
-- Slides use service workers
-- Slides shared through Dat
-- Optionally add _speech_ to your slides
-- Slides are responsive, also controls
+- **:raising_hand: Easy**: No programming skills needed, just markdown.
+- **:rocket: Slides are PWAs**: Slides use service workers, so they are 
+offline-first, also have a manifest, so they are installable.
+- **:globe_with_meridians: p2p distributed**: Slides are automatically shared 
+through Dat.
+- **:nail_care: a11y friendly**: Slides are responsive, also controls. 
+Optionally add _speech_ to your slides.
 
 ## Controls
 - <kbd>→</kbd> or _Tap_: Use ArrowRight key to move forward.
 - <kbd>_</kbd> or _Tap_: Use Space key to move forward.
 - <kbd>←</kbd> or _Double tap_: Use ArrowLeft key to move backward.
-- <kbd>f1</kbd> or _Tap and hold_: Use f1 key to _read_ current slide.
-- <kbd>Ctrl</kbd> + <kbd>p</kbd>: Export slides to pdf (Windows and Linux only).
+- <kbd>f8</kbd> or _Tap and hold_: Use f8 key to _read_ current slide.
 
 ## License
 MIT

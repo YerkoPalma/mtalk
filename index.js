@@ -3,6 +3,7 @@ var choo = require('choo')
 
 css('tachyons')
 css('highlight-syntax-pastel')
+css('./lib/style.css')
 
 var app = choo()
 if (process.env.NODE_ENV !== 'production') {

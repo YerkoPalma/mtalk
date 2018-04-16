@@ -37,7 +37,8 @@
     "minimist": "^1.2.0",
     "rimraf": "^2.6.2",
     "sheetify": "^7.3.0",
-    "tachyons": "^4.9.1"
+    "tachyons": "^4.9.1",
+    "twemoji": "^2.5.1"
   },
   "devDependencies": {
     "bankai": "^9.10.3",

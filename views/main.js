@@ -7,7 +7,7 @@ function view (state, emit) {
     emit('slides:load', 'intro.md')
   }
   return html`
-    <body class="cf center bg-washed-red code pa5">
+    <body class="cf center bg-washed-red code pa4">
       ${state.slides.content || html`<h2>Loading...</h2>`}
     </body>
   `

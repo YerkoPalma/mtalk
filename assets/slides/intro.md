@@ -1,13 +1,12 @@
 ---
-title: Intro to Choo
-next: concepts.md
+title: mtalk | Presentations made easy
+next: markdown.md
 prev: .
-speech:
-  audio: Hola amigo
-  lang: es-US
 ---
-# Choo
+# mtalk
 
-> Quick introduction
+Make the slides for your talks with **markdown only**.
 
-**Example on bin usage**
+Brought to you thanks to [Choo](https://choo.io/), 
+[MarkdownIt](https://markdown-it.github.io/) and other awesome
+open source projects.

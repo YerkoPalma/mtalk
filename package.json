@@ -32,6 +32,7 @@
     "highlight-syntax": "^3.0.2",
     "highlight-syntax-pastel": "^1.0.0",
     "markdown-it": "^8.4.1",
+    "markdown-it-emoji": "^1.4.0",
     "markdown-it-meta": "0.0.1",
     "minimist": "^1.2.0",
     "rimraf": "^2.6.2",

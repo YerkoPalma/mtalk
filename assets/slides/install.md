@@ -1,7 +1,7 @@
 ---
 title: mtalk | markdown concepts
 next: features.md
-prev: markdown.md
+prev: markdown1.md
 ---
 ## Install
 

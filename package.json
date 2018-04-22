@@ -18,7 +18,7 @@
     "build": "bankai build index.js",
     "create": "choo-scaffold",
     "inspect": "bankai inspect index.js",
-    "start": "bankai start index.js",
+    "start": "node bin.js --dev example/slides",
     "test": "standard && npm run test-deps",
     "test-deps": "dependency-check . && dependency-check . --extra --no-dev -i tachyons"
   },

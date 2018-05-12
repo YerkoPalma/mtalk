@@ -61,6 +61,7 @@ function store (state, emitter) {
         state.slides.next = renderer.meta.next
         state.slides.prev = renderer.meta.prev
         state.slides.speech = renderer.meta.speech
+        emitter.emit('DOMTitleChange', state.slides.title)
         emitter.emit('render')
       })
   })
